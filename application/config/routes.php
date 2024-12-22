@@ -49,18 +49,43 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-
-$route['default_controller'] = 'welcome';
+/*
+| Default Routes
+*/
+$route['default_controller'] = 'auth';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['employee'] = 'frontend/EmployeeController/index'; 
-$route['employee/add'] = 'frontend/EmployeeController/create';
-$route['employee/store'] = 'frontend/EmployeeController/store';
-$route['employee/edit/(:any)'] = 'frontend/EmployeeController/edit/$1';
-$route['employee/update/(:any)'] = 'frontend/EmployeeController/update/$1';
-$route['employee/delete/(:any)'] = 'frontend/EmployeeController/delete/$1';
+/*
+| Authentication Routes
+*/
+$route['login'] = 'auth/login';
+$route['logout'] = 'auth/logout';
 
+/*
+| Dashboard Routes
+*/
+$route['dashboard'] = 'dashboard/index';
 
+/*
+| Employee Routes
+*/
+// List and Create
+$route['employees'] = 'employees/index';
+$route['employees/create'] = 'employees/create';
+$route['employees/search'] = 'employees/search';
 
-$route['blog/(:any)'] = 'PageController/blog/$1';
+// Edit and Delete
+$route['employees/edit/(:num)'] = 'employees/edit/$1';
+$route['employees/delete/(:num)'] = 'employees/delete/$1';
+
+/*
+| User Management Routes (Admin Only)
+*/
+// List and Create
+$route['users'] = 'users/index';
+$route['users/create'] = 'users/create';
+
+// Edit and Delete
+$route['users/edit/(:num)'] = 'users/edit/$1';
+$route['users/delete/(:num)'] = 'users/delete/$1';

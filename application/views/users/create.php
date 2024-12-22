@@ -10,14 +10,14 @@
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
-            <label>First Name</label>
-            <input type="text" name="firstname" class="form-control" required value="<?php echo set_value('firstname'); ?>">
+            <label>Prénom</label>
+            <input type="text" name="prenom" class="form-control" required value="<?php echo set_value('prenom'); ?>">
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
-            <label>Last Name</label>
-            <input type="text" name="lastname" class="form-control" required value="<?php echo set_value('lastname'); ?>">
+            <label>Nom</label>
+            <input type="text" name="nom" class="form-control" required value="<?php echo set_value('nom'); ?>">
           </div>
         </div>
       </div>
@@ -31,26 +31,26 @@
         </div>
         <div class="col-md-6">
           <div class="form-group">
-            <label>Password</label>
-            <input type="password" name="password" class="form-control" required>
-            <small class="text-muted">Minimum 6 characters</small>
+            <label>Mot de Passe</label>
+            <input type="password" name="mot_de_passe" class="form-control" required>
+            <small class="text-muted">Minimum 6 caractères</small>
           </div>
         </div>
       </div>
 
       <div class="form-group">
-        <label>Role</label>
+        <label>Rôle</label>
         <select name="role" class="form-control" required>
-          <option value="">Select Role</option>
+          <option value="">Sélectionner un rôle</option>
           <option value="Admin" <?php echo set_select('role', 'Admin'); ?>>Admin</option>
-          <option value="User" <?php echo set_select('role', 'User'); ?>>User</option>
+          <option value="User" <?php echo set_select('role', 'User'); ?>>Utilisateur</option>
         </select>
       </div>
     </div>
 
     <div class="box-footer">
-      <button type="submit" class="btn btn-primary">Save</button>
-      <a href="<?php echo site_url('users'); ?>" class="btn btn-default">Cancel</a>
+      <button type="submit" class="btn btn-primary">Enregistrer</button>
+      <a href="<?php echo site_url('users'); ?>" class="btn btn-default">Annuler</a>
     </div>
   </form>
 </div>
